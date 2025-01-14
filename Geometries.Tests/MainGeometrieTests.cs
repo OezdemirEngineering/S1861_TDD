@@ -1,4 +1,5 @@
-﻿using Geometries.Contracts;
+﻿using FluentAssertions;
+using Geometries.Contracts;
 using NSubstitute;
 using System.Reflection.PortableExecutable;
 
@@ -27,7 +28,7 @@ namespace Geometries.Tests
             var length = mainGeometrie.GetLength();
 
             // Assert
-            Assert.Equal(expectedLength, length);
+            length.Should().Be(expectedLength);
         }
 
         [Theory]
@@ -51,7 +52,8 @@ namespace Geometries.Tests
             var area = mainGeometrie.GetArea();
 
             // Assert
-            Assert.Equal(expectedArea, area);
+            area.Should().Be(expectedArea);
+
         }
     }
 }
