@@ -9,10 +9,11 @@ namespace Geometries.Shapes;
 /// <param name="height">The height of the rectangle.</param>
 public class Rectangle(double width, double height) : IGeometry
 {
+
     /// <summary>
     /// Gets the width of the rectangle.
     /// </summary>
-    public double Width 
+    public double Width
         => width;
 
     /// <summary>
