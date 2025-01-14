@@ -86,6 +86,7 @@ public class CalculatorHelperTests
 
     [TestCase(5, 25)]
     [TestCase(3, 9)]
+    [TestCase(10, 100)]
     public void Square_Integer_ExpectedSquare(int a, int expected)
     {
         // Act

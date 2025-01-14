@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmergencyBrakeService.Utils;
 
-internal static class BrakeDistanceHelper
+public static class BrakeDistanceHelper
 {
     public const double Gravity = 9.81;
     public static double CalculateBrakeDistance(double initialSpeed, double frictionCoefficient)

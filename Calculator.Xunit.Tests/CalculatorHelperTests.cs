@@ -2,8 +2,14 @@
 
 namespace Calculator.Xunit.Tests;
 
-public class CalculatorHelperTests
+public class CalculatorHelperTests : IDisposable
 {
+
+    public CalculatorHelperTests()
+    {
+
+    }
+
     [Fact]
     public void Add_TwoIntegers_ExpectedSum()
     {
@@ -88,4 +94,8 @@ public class CalculatorHelperTests
         Assert.Equal(expected, actual);
     }
 
+    public void Dispose()
+    {
+
+    }
 }

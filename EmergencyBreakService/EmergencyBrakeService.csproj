@@ -10,7 +10,4 @@
     <PackageReference Include="UnitsNet" Version="6.0.0-pre013" />
   </ItemGroup>
 
-	<ItemGroup>
-		<InternalVisibleTo Include="EmergencyBrakeService.Tests" />
-	</ItemGroup>
 </Project>
