@@ -62,4 +62,35 @@ public class DbServiceTests: IDisposable
         user.Should().BeNull();
     }
 
+    [Theory]
+    [MemberData(nameof(UserDataGeneration))]
+    public void GetUsers_ExistingUsers_ReturnsUsers(UserDto user, UserDto user2)
+    {
+        // Arrange
+        var dbService = new DbService(_context);
+        _context.Users.Add(user);
+        _context.SaveChanges();
+
+        // Act
+        var users = dbService.GetUsers();
+
+        // Assert
+        users.Should().ContainEquivalentOf(user);
+    }
+
+
+
+    public static IEnumerable<object[]> UserDataGeneration()
+    {
+        var list = new List<object[]>();
+
+        for (int i = 0; i < 10; i++)
+        {
+            list.Add(new object[] { new UserDto { FirstName = "user"+i, FamilyName = "familiyname"+i, Email = "mail"+i+"@oeeng.de" },
+                                    new UserDto { FirstName = "user"+i, FamilyName = "familiyname"+i, Email = "mail"+i+"@oeeng.de" }});
+        }
+
+        return list;
+    }
+
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmergencyBrakeService.Utils;
+namespace EmergencyBrakeService.Services;
 
 public class BrakeDistanceService(IFrictionService frictionService,ILoggerService logger) : IBrakeDistanceCalculatorService
 {
