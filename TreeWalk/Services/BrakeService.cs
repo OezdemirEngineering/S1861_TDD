@@ -1,5 +1,4 @@
-﻿using EmergencyBrakeService.Utils;
-using ServiceHell.Contracts;
+﻿using ServiceHell.Contracts;
 using UnitsNet;
 
 namespace EmergencyBrakeService.Services;
