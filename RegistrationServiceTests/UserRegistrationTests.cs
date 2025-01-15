@@ -15,7 +15,10 @@ public class UserRegistrationTests
         var mockEmailService = Substitute.For<IEmailService>();
 
         mockEmailService.When(mockEmailService => mockEmailService.SendEmail(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>()))
-            .Do(_ => Console.WriteLine("Email sent"));
+            .Do(_ =>
+            {
+                var str = _.ArgAt<string>(0); // first param
+            });   
 
         var mockLoggerService = Substitute.For<ILoggerService>();
         var mockDbService = Substitute.For<IDbService>();
