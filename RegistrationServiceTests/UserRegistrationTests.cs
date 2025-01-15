@@ -31,7 +31,7 @@ public class UserRegistrationTests
         services.AddSingleton<IEmailService>(mockEmailService)
             .AddSingleton<ILoggerService>(mockLoggerService)
             .AddSingleton<IDbService>(mockDbService)
-            .AddTransient<UserRegistrationService>();
+            .AddSingleton<UserRegistrationService>();
 
         _provider = services.BuildServiceProvider();
     }
