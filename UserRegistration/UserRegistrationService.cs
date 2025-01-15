@@ -2,7 +2,7 @@
 
 namespace UserRegistration;
 
-public class UserRegistration(IDbService dbService, ILoggerService loggerService, IEmailService emailService)
+public class UserRegistrationService(IDbService dbService, ILoggerService loggerService, IEmailService emailService)
 {
     private readonly IDbService _dbService = dbService;
     private readonly ILoggerService _loggerService = loggerService ;

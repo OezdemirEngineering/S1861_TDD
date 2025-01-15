@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHell", "ServiceHell\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHell.Tests", "ServiceHell.Tests\ServiceHell.Tests.csproj", "{763EA46B-EB26-4A11-ACFB-F9EFD0BDFDCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistrationServiceTests", "RegistrationServiceTests\RegistrationServiceTests.csproj", "{5DB450C0-C365-408A-90AA-21B2265AB721}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{763EA46B-EB26-4A11-ACFB-F9EFD0BDFDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{763EA46B-EB26-4A11-ACFB-F9EFD0BDFDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{763EA46B-EB26-4A11-ACFB-F9EFD0BDFDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB450C0-C365-408A-90AA-21B2265AB721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB450C0-C365-408A-90AA-21B2265AB721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB450C0-C365-408A-90AA-21B2265AB721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB450C0-C365-408A-90AA-21B2265AB721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -131,6 +137,7 @@ Global
 		{78C4F053-9933-41BA-83CC-D4658979A057} = {636304D1-124E-400E-A32E-3324DB2707D8}
 		{534A6461-E3BC-4D9C-8DCB-9743F84F42A1} = {5042F989-4CED-4BF1-B1E1-5CD32DCDF609}
 		{763EA46B-EB26-4A11-ACFB-F9EFD0BDFDCA} = {5042F989-4CED-4BF1-B1E1-5CD32DCDF609}
+		{5DB450C0-C365-408A-90AA-21B2265AB721} = {9DC7DC2A-9DF5-4E88-82C7-A3E4DF8A2389}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {53E3E13B-8C12-489A-9C8C-FB495F31F03E}
