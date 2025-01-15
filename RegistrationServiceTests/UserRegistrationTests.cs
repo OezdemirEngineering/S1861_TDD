@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
-using NSubstitute.Core.Arguments;
 using UserRegistration;
 using UserRegistration.Common.Contracts;
 
@@ -8,9 +7,6 @@ namespace RegistrationServiceTests;
 
 public class UserRegistrationTests
 {
-
-
-
 
     private readonly ServiceProvider _provider;
 
@@ -58,6 +54,16 @@ public class UserRegistrationTests
         DbService.Received(1).SaveUser("testuser", "testpassword");
         LoggerService.Received(1).LogInfo(Arg.Any<string>());
 
+
+        //Private Accessor
+        var str= UserRegistrationService.GetPrivateField<string>("_privateStr");
+
+        UserRegistrationService.SetPrivateField("_privateStr", "testStr");
+
+        var str2 = UserRegistrationService.GetPrivateField<string>("_privateStr");
+
+
+        UserRegistrationService.CallPrivateMethod<string>("TestPrivateMethod", "testParam");    
 
         // Alternative solution to catch the method call 
         //mockEmailService.When(mockEmailService => mockEmailService.SendEmail(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>()))

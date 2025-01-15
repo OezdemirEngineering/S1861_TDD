@@ -8,6 +8,15 @@ public class UserRegistrationService(IDbService dbService, ILoggerService logger
     private readonly ILoggerService _loggerService = loggerService ;
     private readonly IEmailService _emailService = emailService;
 
+    private string  _privateStr = "testPrivateStr";
+
+
+
+    internal void TestPrivateMethod(string param)
+    {
+        Console.WriteLine("TestPrivateMethod"+param);
+    }
+
     public void RegisterUser(string username, string password)
     {
         if (_dbService.UserExists(username))
