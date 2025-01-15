@@ -15,6 +15,7 @@ public class UserRegistrationService(IDbService dbService, ILoggerService logger
             _loggerService.LogError($"User {username} already exists");
             return;
         }
+
         _dbService.SaveUser(username, password);
         _loggerService.LogInfo($"User {username} registered successfully");
         _emailService.SendEmail(username, "Registration successful", "Welcome to our platform!");
