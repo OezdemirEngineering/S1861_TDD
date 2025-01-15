@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ServiceHell\ServiceHell.csproj" />
     <ProjectReference Include="..\TreeWalk\ServiceHell.csproj" />
   </ItemGroup>
 
