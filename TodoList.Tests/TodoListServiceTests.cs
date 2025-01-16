@@ -77,8 +77,11 @@ public class TodoListServiceTests
         todoItem.Completion.Should().Be(completion);
     }
 
-    [Fact]
-    public void GetTodos_CompletionStatus_ReturnsTodos()
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+
+    public void GetTodos_CompletionStatus_ReturnsTodos( bool completion)
     {
         // Arrange
         var todoListService = new TodoListService();
@@ -90,11 +93,15 @@ public class TodoListServiceTests
         todoListService.Todos.Add(new TodoItem(3, todo3, true));
 
         // Act
-        var todos = todoListService.GetTodos(false);
+        var todos = todoListService.GetTodos(completion);
+
+        var count = todoListService.Todos.Count(x=>x.Completion != completion);
 
         // Assert
         todos.Should().ContainEquivalentOf(new TodoItem(1, todo1, false));
         todos.Should().ContainEquivalentOf(new TodoItem(2, todo2, false));
         todos.Should().NotContainEquivalentOf(new TodoItem(3, todo3, true));
     }
+
+
 }
