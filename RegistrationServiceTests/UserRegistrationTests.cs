@@ -55,14 +55,11 @@ public class UserRegistrationTests
         LoggerService.Received(1).LogInfo(Arg.Any<string>());
 
 
-        //Private Accessor
+        //Private Accessor Example
         var str= UserRegistrationService.GetPrivateField<string>("_privateStr");
 
         UserRegistrationService.SetPrivateField("_privateStr", "testStr");
-
         var str2 = UserRegistrationService.GetPrivateField<string>("_privateStr");
-
-
         UserRegistrationService.CallPrivateMethod<string>("TestPrivateMethod", "testParam");    
 
         // Alternative solution to catch the method call 
