@@ -8,6 +8,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <StackPanel x:Name="LoginPanel"  HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding LoginPanelVisibility}">
+            <TextBox x:Name="UserName" Text="{Binding UserName}" Margin="5" Height="30" Width="200" />
+            <TextBox x:Name="Password" Text="{Binding Password}" Margin="5" Height="30" Width="200" />
+            <Button x:Name="LoginButton" Command="{Binding LoginButtonCommand}" Content="Login" Height="30" Width="200" />
+        </StackPanel>
+
+        <StackPanel x:Name="DashBoard" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding DashBoardPanelVisibility}">
+            <TextBlock Text="Dashboard"></TextBlock>
+            <Button x:Name="Logout" Content="Logout" Height="30" Width="200" Command="{Binding LogoutButtonCommand}"></Button>
+        </StackPanel>
+       
 
     </Grid>
 </mah:MetroWindow>

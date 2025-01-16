@@ -20,5 +20,6 @@ public partial class MainWindow : MetroWindow
     public MainWindow()
     {
         InitializeComponent();
+        DataContext = new MainWindowViewModel();
     }
 }
