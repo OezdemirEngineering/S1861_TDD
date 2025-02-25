@@ -53,22 +53,6 @@ public class UserRegistrationTests
         EMailService.Received(1).SendEmail("testuser", Arg.Any<string>(), Arg.Any<string>());
         DbService.Received(1).SaveUser("testuser", "testpassword");
         LoggerService.Received(1).LogInfo(Arg.Any<string>());
-
-
-        //Private Accessor Example
-        var str= UserRegistrationService.GetPrivateField<string>("_privateStr");
-
-        UserRegistrationService.SetPrivateField("_privateStr", "testStr");
-        var str2 = UserRegistrationService.GetPrivateField<string>("_privateStr");
-        UserRegistrationService.CallPrivateMethod<string>("TestPrivateMethod", "testParam");    
-
-        // Alternative solution to catch the method call 
-        //mockEmailService.When(mockEmailService => mockEmailService.SendEmail(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>()))
-        //    .Do(_ =>
-        //    {
-        //        _userNameInSendMail = _.ArgAt<string>(0); // first param
-        //    });
-
     }
 
     [Fact]

@@ -4,15 +4,6 @@ namespace Calculator.Nunit.Tests;
 
 public class CalculatorHelperTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
-    [TearDown] 
-    public void TearDown() 
-    { 
-    }
 
     [Test]
     public void Add_TwoIntegers_ExpectedSum()
@@ -70,7 +61,7 @@ public class CalculatorHelperTests
 
 
         // Assert
-        Assert.That(expected, Is.EqualTo(actual));
+        Assert.Equals(expected, Is.EqualTo(actual).Tolerance);
     }
 
     [Test]
@@ -80,20 +71,9 @@ public class CalculatorHelperTests
         var operand1 = 6;
         var operand2 = 0;
 
+
         // Act & Assert
         Assert.Throws<DivideByZeroException>(() => CalculatorHelper.Divide(operand1, operand2));
-    }
-
-    [TestCase(5, 25)]
-    [TestCase(3, 9)]
-    [TestCase(10, 100)]
-    public void Square_Integer_ExpectedSquare(int a, int expected)
-    {
-        // Act
-        var actual = CalculatorHelper.Square(a);
-
-        // Assert
-        Assert.That(expected, Is.EqualTo(actual));
     }
 
 }

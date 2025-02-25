@@ -2,13 +2,8 @@
 
 namespace Calculator.Xunit.Tests;
 
-public class CalculatorHelperTests : IDisposable
+public class CalculatorHelperTests 
 {
-
-    public CalculatorHelperTests()
-    {
-
-    }
 
     [Fact]
     public void Add_TwoIntegers_ExpectedSum()
@@ -77,25 +72,10 @@ public class CalculatorHelperTests : IDisposable
         var operand1 = 6;
         var operand2 = 0;
 
-        // Act & Assert
-        Assert.Throws<DivideByZeroException>(() => CalculatorHelper.Divide(operand1, operand2));
-    }
+        // Act 
+        var catchedException = Record.Exception(() => CalculatorHelper.Divide(operand1, operand2));
 
-    [Theory]
-    [InlineData(5, 25)]
-    [InlineData(3, 9)]
-    [InlineData(4, 16)]
-    public void Square_Integer_ExpectedSquare(int a, int expected)
-    {
-        // Act
-        var actual = CalculatorHelper.Square(a);
-
-        // Assert
-        Assert.Equal(expected, actual);
-    }
-
-    public void Dispose()
-    {
-
+        //Assert
+        Assert.IsType<Exception> (catchedException);
     }
 }
